@@ -5,7 +5,7 @@ const taskRouter = require('./routers/task')
 const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://root:root123@cluster0.kmf0zov.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect((process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
 const app = express()
 const port = process.env.PORT || 3000
 
